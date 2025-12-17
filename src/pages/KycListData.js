@@ -6,15 +6,18 @@ import KycFormAdd from "../components/KycFormAdd";
 const KycListData = () => {
     
     const [kycList, SetKycList] = useState(mockKyc);
-    // const addKyc = (newKyc) => {
-    //     SetKycList()
-    // }
+   
+    const addKyc = (newKyc) => {
+        SetKycList(
+            prev => [...prev, {...newKyc, id: Date.now()}]
+        )
+    }
 
     return (
         <div>
             table
             <KycTableView kycList={kycList}/>
-            <KycFormAdd/>
+            <KycFormAdd addKyc={addKyc}/>
         </div>
     )
 }
