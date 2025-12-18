@@ -15,7 +15,7 @@ const KycListData = () => {
 
     return (
         <div>
-            table
+            
             <KycTableView kycList={kycList}/>
             <KycFormAdd addKyc={addKyc}/>
         </div>

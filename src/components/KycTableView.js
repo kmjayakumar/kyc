@@ -3,9 +3,13 @@ import KycTableRow from "./KycTableRow";
 const KycTableView = ({kycList}) => {
     
     return (
-        <table className="border-2 border-orange-500 mx-10 ">
+        <div className="my-14">
+            <h3 className="font-extrabold mx-96 m-4 underline underline-offset-4">
+                KYC Datas
+            </h3>
+        <table className="border-2 border-orange-500 mx-96">
                 <thead>
-                    <tr className="text-center">
+                    <tr className="text-center border-2 border-orange-500 ">
                         <th>S. No.</th>
                         <th>Name</th>
                         <th>Aadhaar</th>
@@ -16,11 +20,14 @@ const KycTableView = ({kycList}) => {
                 </thead>
                 <tbody>
                     {
-                        kycList.map((items) => <KycTableRow key={items.id} items={items}/>  )
+                        kycList.map((items) => <KycTableRow 
+                        className=""
+                        key={items.id} items={items}/>  )
                     }
                   
                 </tbody>
             </table>
+            </div>
     )
 }
 
