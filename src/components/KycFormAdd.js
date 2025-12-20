@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { KycContext } from "../context/kycContext";
 
-const KycFormAdd = ({addKyc}) => {
+const KycFormAdd = ({}) => {
+
+    const {addKyc} = useContext(KycContext);
     // console.log(addKyc);
     const [formData, setFormData] = React.useState({
         name: "",
@@ -12,7 +15,8 @@ const KycFormAdd = ({addKyc}) => {
     // console.log('form:',formData);
 const handleChange = (e) => {
     const {name, value} = e.target;
-    setFormData(prev => ({...prev, name: [value]}));
+    // setFormData(prev => ({...prev, name: [value]}));
+    setFormData(prev => ({...prev, [name]: value}));
 }
 
     const handleSubmit = (e) => {

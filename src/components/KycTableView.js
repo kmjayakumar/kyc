@@ -1,6 +1,10 @@
 import KycTableRow from "./KycTableRow";
+import { KycContext } from "../context/kycContext";
+import { useContext } from "react";
 
-const KycTableView = ({kycList}) => {
+const KycTableView = ({}) => {
+
+    const {kycList} = useContext(KycContext);
     
     return (
         <div className="my-14">
@@ -21,7 +25,7 @@ const KycTableView = ({kycList}) => {
                 <tbody>
                     {
                         kycList.map((items) => <KycTableRow 
-                        className=""
+                        
                         key={items.id} items={items}/>  )
                     }
                   

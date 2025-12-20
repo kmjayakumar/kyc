@@ -2,6 +2,7 @@ import { useState } from "react";
 import { mockKyc } from "../data/mockKyc";
 import KycTableView from "../components/KycTableView";
 import KycFormAdd from "../components/KycFormAdd";
+import { KycContext } from "../context/kycContext";
 
 const KycListData = () => {
     
@@ -16,8 +17,13 @@ const KycListData = () => {
     return (
         <div>
             
-            <KycTableView kycList={kycList}/>
-            <KycFormAdd addKyc={addKyc}/>
+            {/* <KycTableView kycList={kycList}/>
+            <KycFormAdd addKyc={addKyc}/> */}
+
+            <KycContext.Provider value={{kycList, addKyc}} >
+                <KycTableView />
+                <KycFormAdd />
+            </KycContext.Provider>
         </div>
     )
 }
