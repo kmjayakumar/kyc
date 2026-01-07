@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .btn1, .btn2, .btn3 {
+            border-radius: 25px;
+        }
+    </style>
+
+    <div>
+        <form>
+            <input type="button" onclick="pop(event)" class="btn1" value="apple">
+            <input type="button" onclick="pop(event)" class="btn2" value="orange">
+            <input type="button" onclick="pop(event)" class="btn3" value="car">
+        </form>
+    </div>
+    <script>
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        let btn3 = document.getElementById("btn3");
+
+        function pop(event)
+        {
+            // console.log(event.target.value);
+            alert(event.target.value);
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
